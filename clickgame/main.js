@@ -1,25 +1,40 @@
 var clicks = 0;
+var nextclicks = 0;
 var upgrades = 0;
+var autoclicks = 0;
+
+var progress = 0;
 
 function load()
 {
     clicks = parseInt(getCookie("clicks"));
     upgrades = parseInt(getCookie("upgrades"));
+    autoclicks = parseInt(getCookie("autoclicks"));
+    setInterval(update, 10);
     update();
 }
 
 function update()
 {
-    document.getElementById("p1").innerHTML = "Klicks: " + clicks;
+    document.getElementById("p1").innerHTML = "Klicks: " + (clicks + (nextclicks - clicks) * progress);
     document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " +  Math.pow(3, upgrades) * 100;
+    document.getElementById("autoclickbtn").innerHTML = "Autoklicks ("+autoclicks+"): " + 100;
     setCookie("clicks", clicks, 300);
     setCookie("upgrades", upgrades, 300);
+    setCookie("autoclicks", autoclicks, 300);    
+
+    progress += .01;
+    if (progress >= 1)
+    {
+        nextclicks = clicks + autoclicks;
+        progress = 0;
+    }
 }
 
 function btnclick()
 {
     clicks += Math.pow(2, upgrades);
-    update();
+    nextclicks += Math.pow(2, upgrades);
 }
 
 function upgrade()
@@ -29,7 +44,15 @@ function upgrade()
         clicks -=  Math.pow(3, upgrades) * 100;
         upgrades++;
     }
-    update();
+}
+
+function buyautoclick()
+{
+    if (clicks >= 100)
+    {
+        clicks -= 100;
+        autoclicks++;
+    }
 }
 
 function setCookie(name, value, exdays)
