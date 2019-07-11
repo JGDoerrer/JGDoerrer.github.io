@@ -11,7 +11,7 @@ function load()
 function update()
 {
     document.getElementById("p1").innerHTML = "Klicks: " + clicks;
-    document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " +  Math.pow(3, upgrades);
+    document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " +  Math.pow(3, upgrades) * 100;
     setCookie("clicks", clicks, 300);
     setCookie("upgrades", upgrades, 300);
 }
@@ -24,9 +24,9 @@ function btnclick()
 
 function upgrade()
 {
-    if (clicks >=  Math.pow(3, upgrades))
+    if (clicks >=  Math.pow(3, upgrades) * 100)
     {
-        clicks -=  Math.pow(3, upgrades);
+        clicks -=  Math.pow(3, upgrades) * 100;
         upgrades++;
     }
     update();
