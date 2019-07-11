@@ -8,10 +8,10 @@ var progress = 0;
 function load()
 {
     clicks = parseInt(getCookie("clicks"));
+    nextclicks = clicks;
     upgrades = parseInt(getCookie("upgrades"));
     autoclicks = parseInt(getCookie("autoclicks"));
     setInterval(update, 10);
-    update();
 }
 
 function update()
@@ -43,6 +43,7 @@ function upgrade()
     if (clicks >=  Math.pow(3, upgrades) * 100)
     {
         clicks -=  Math.pow(3, upgrades) * 100;
+        nextclicks -=  Math.pow(3, upgrades) * 100;
         upgrades++;
     }
 }
@@ -52,6 +53,7 @@ function buyautoclick()
     if (clicks >= 100)
     {
         clicks -= 100;
+        nextclicks -= 100;
         autoclicks++;
     }
 }
