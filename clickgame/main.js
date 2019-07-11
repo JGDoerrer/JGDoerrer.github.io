@@ -1,4 +1,4 @@
 function click()
 {
-    
+    alert("click");
 }
