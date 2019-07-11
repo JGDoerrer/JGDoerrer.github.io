@@ -18,7 +18,7 @@ function load()
 function update()
 {
     clicks = Math.floor(prevclicks + (nextclicks - prevclicks) * progress);
-    document.getElementById("p1").innerHTML = "Klicks: " + clicks0;
+    document.getElementById("p1").innerHTML = "Klicks: " + clicks;
     document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " +  Math.pow(3, upgrades) * 100;
     document.getElementById("autoclickbtn").innerHTML = "Autoklicks ("+autoclicks+"): " + 100;
     setCookie("clicks", clicks, 300);
