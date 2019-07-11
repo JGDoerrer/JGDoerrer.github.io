@@ -1,4 +1,4 @@
-function click()
+function btnclick()
 {
     alert("click");
 }
