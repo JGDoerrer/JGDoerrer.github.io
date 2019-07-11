@@ -55,7 +55,7 @@ function upgrade()
 
 function buyautoclick()
 {
-    if (clicks >= 60 * Math.floor(Math.pow(1.25, autoclicks))
+    if (clicks >= 60 * Math.floor(Math.pow(1.25, autoclicks)))
     {
         clicks -= 60 * Math.floor(Math.pow(1.25, autoclicks));
         nextclicks -= 60 * Math.floor(Math.pow(1.25, autoclicks));
