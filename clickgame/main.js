@@ -47,6 +47,7 @@ function upgrade()
     {
         clicks -=  Math.pow(3, upgrades) * 100;
         nextclicks -=  Math.pow(3, upgrades) * 100;
+        prevclicks = clicks;
         upgrades++;
     }
 }
@@ -57,6 +58,7 @@ function buyautoclick()
     {
         clicks -= 100;
         nextclicks -= 100;
+        prevclicks = clicks;
         autoclicks++;
     }
 }
