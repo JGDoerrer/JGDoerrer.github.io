@@ -13,7 +13,7 @@ function update()
     setCookie("clicks", clicks, 300);
 }
 
-function click()
+function btnclick()
 {
     clicks++;
     update();
