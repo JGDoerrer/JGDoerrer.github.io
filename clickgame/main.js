@@ -30,6 +30,7 @@ function upgrade()
         clicks -= upgradeCost;
         upgrades++;
     }
+    update();
 }
 
 function setCookie(name, value, exdays)
