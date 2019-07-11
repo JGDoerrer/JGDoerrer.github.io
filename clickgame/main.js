@@ -39,14 +39,15 @@ function btnclick()
 {
     clicks += Math.pow(2, upgrades);
     nextclicks += Math.pow(2, upgrades);
+    prevclicks += Math.pow(2, upgrades);
 }
 
 function upgrade()
 {
-    if (clicks >=  Math.pow(3, upgrades) * 100)
+    if (clicks >= Math.pow(3, upgrades) * 100)
     {
-        clicks -=  Math.pow(3, upgrades) * 100;
-        nextclicks -=  Math.pow(3, upgrades) * 100;
+        clicks -= Math.pow(3, upgrades) * 100;
+        nextclicks -= Math.pow(3, upgrades) * 100;
         prevclicks = clicks;
         upgrades++;
     }
