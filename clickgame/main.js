@@ -1,4 +1,5 @@
 var clicks = 0;
+var prevclicks = 0;
 var nextclicks = 0;
 var upgrades = 0;
 var autoclicks = 0;
@@ -16,7 +17,8 @@ function load()
 
 function update()
 {
-    document.getElementById("p1").innerHTML = "Klicks: " + Math.floor(clicks + (nextclicks - clicks) * progress);
+    clicks = Math.floor(prevclicks + (nextclicks - prevclicks) * progress);
+    document.getElementById("p1").innerHTML = "Klicks: " + clicks0;
     document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " +  Math.pow(3, upgrades) * 100;
     document.getElementById("autoclickbtn").innerHTML = "Autoklicks ("+autoclicks+"): " + 100;
     setCookie("clicks", clicks, 300);
@@ -27,6 +29,7 @@ function update()
     if (progress >= 1)
     {
         clicks = nextclicks;
+        prevclicks = clicks;
         nextclicks = clicks + autoclicks;
         progress = 0;
     }
