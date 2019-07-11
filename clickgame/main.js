@@ -7,10 +7,16 @@ function load()
     clicks = parseInt(getCookie("clicks"));
 }
 
+function update()
+{
+    document.getElementById("p1").innerHTML = "Klicks: " + clicks;
+    setCookie("clicks", clicks, 300);
+}
+
 function click()
 {
     clicks++;
-    setCookie("clicks", clicks, 300);
+    update();
 }
 
 function setCookie(name, value, exdays)
