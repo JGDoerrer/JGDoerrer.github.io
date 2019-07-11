@@ -1,10 +1,9 @@
-window.onload = load();
-
 var clicks = 0;
 
 function load()
 {
     clicks = parseInt(getCookie("clicks"));
+    update();
 }
 
 function update()
