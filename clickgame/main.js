@@ -21,6 +21,7 @@ function update()
 {
     clicks = Math.floor(prevclicks + (nextclicks - prevclicks) * progress);
     document.getElementById("p1").innerHTML = "Klicks: " + clicks;
+    document.getElementById("p2").innerHTML = "Klicks pro Sekunde: " + autoclicks * Math.pow(2, autoclickupgrades);
     document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " +  Math.pow(3, upgrades) * 100;
     document.getElementById("autoclickbtn").innerHTML = "Autoklicks ("+autoclicks+"): " + Math.floor(60 * Math.pow(1.25, autoclicks));
     document.getElementById("upgradeautoclickbtn").innerHTML = "Autoklickupgrades ("+autoclickupgrades+"): " + 250 * Math.pow(3, autoclickupgrades);
@@ -34,7 +35,7 @@ function update()
     {
         clicks = nextclicks;
         prevclicks = clicks;
-        nextclicks = clicks + autoclicks * Math.pow(2,autoclickupgrades);
+        nextclicks = clicks + autoclicks * Math.pow(2, autoclickupgrades);
         progress = 0;
     }
 }
