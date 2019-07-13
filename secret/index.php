@@ -1,3 +1,7 @@
+<?php
+echo "Passwort: ". $_GET['password'];
+?>
+
 <form>
     <p>
         <input type="text" name="password">
