@@ -9,11 +9,11 @@ var progress = 0;
 
 function load()
 {
-    clicks = parseInt("0"+getCookie("clicks"));
+    clicks = parseInt(getCookie("clicks"));
     nextclicks = clicks;
-    upgrades = parseInt("0"+getCookie("upgrades"));
-    autoclicks = parseInt("0"+getCookie("autoclicks"));
-    autoclickupgrades = parseInt("0"+getCookie("autoclickupgrades"));
+    upgrades = parseInt(getCookie("upgrades"));
+    autoclicks = parseInt(getCookie("autoclicks"));
+    autoclickupgrades = parseInt(getCookie("autoclickupgrades"));
     setInterval(update, 10);
 }
 
@@ -23,7 +23,7 @@ function update()
     document.getElementById("p1").innerHTML = "Klicks: " + clicks;
     document.getElementById("p2").innerHTML = "Klicks pro Sekunde: " + autoclicks * Math.pow(2, autoclickupgrades);
     document.getElementById("upgradebtn").innerHTML = "Upgrades ("+upgrades+"): " + upgradecost();
-    document.getElementById("autoclickbtn").innerHTML = "Autoklicks ("+autoclicks+"): " + autoclickcost());
+    document.getElementById("autoclickbtn").innerHTML = "Autoklicks ("+autoclicks+"): " + autoclickcost();
     document.getElementById("upgradeautoclickbtn").innerHTML = "Autoklickupgrades ("+autoclickupgrades+"): " + autoclickupgradecost();
     setCookie("clicks", clicks, 300);
     setCookie("upgrades", upgrades, 300);
@@ -117,5 +117,5 @@ function getCookie(name)
         return c.substring(name.length, c.length);
       }
     }
-    return "";
+    return "0";
 }
