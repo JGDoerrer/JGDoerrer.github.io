@@ -17,7 +17,7 @@ function load()
     var offlineclicks = autoclicks * Math.pow(2, autoclickupgrades) * timePassed / 1000
     nextclicks = clicks + offlineclicks;
     console.log(offlineclicks);
-    setInterval(update, 10);
+    window.setInterval(update, 10);
 }
 
 function update()
