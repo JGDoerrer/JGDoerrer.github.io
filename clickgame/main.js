@@ -11,6 +11,9 @@ function load()
 {
     clicks = parseInt(getCookie("clicks"));
     var timePassed = Date.now - parseInt(getCookie("lastonline"));
+    console.log(Date.now);
+    console.log(parseInt(getCookie("lastonline")));
+    console.log(timePassed);
     upgrades = parseInt(getCookie("upgrades"));
     autoclicks = parseInt(getCookie("autoclicks"));
     autoclickupgrades = parseInt(getCookie("autoclickupgrades"));    
