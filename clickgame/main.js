@@ -9,11 +9,11 @@ var progress = 0;
 
 function load()
 {
-    clicks = parseInt(getCookie("clicks"));
+    clicks = parseInt("0"+getCookie("clicks"));
     nextclicks = clicks;
-    upgrades = parseInt(getCookie("upgrades"));
-    autoclicks = parseInt(getCookie("autoclicks"));
-    autoclickupgrades = parseInt(getCookie("autoclickupgrades"));
+    upgrades = parseInt("0"+getCookie("upgrades"));
+    autoclicks = parseInt("0"+getCookie("autoclicks"));
+    autoclickupgrades = parseInt("0"+getCookie("autoclickupgrades"));
     setInterval(update, 10);
 }
 
@@ -117,5 +117,5 @@ function getCookie(name)
         return c.substring(name.length, c.length);
       }
     }
-    return "0";
+    return "";
 }
