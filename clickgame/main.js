@@ -11,6 +11,7 @@ function load()
 {
     clicks = parseInt(getCookie("clicks"));
     nextclicks = clicks;
+    prevclicks = clicks;
     upgrades = parseInt(getCookie("upgrades"));
     autoclicks = parseInt(getCookie("autoclicks"));
     autoclickupgrades = parseInt(getCookie("autoclickupgrades"));
