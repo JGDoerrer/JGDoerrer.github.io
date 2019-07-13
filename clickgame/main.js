@@ -17,7 +17,7 @@ function load()
     upgrades = parseInt(getCookie("upgrades"));
     autoclicks = parseInt(getCookie("autoclicks"));
     autoclickupgrades = parseInt(getCookie("autoclickupgrades"));    
-    nextclicks = clicks + autoclicks * Math.pow(2, autoclickupgrades) * timePassed / 1000;
+    nextclicks = clicks + autoclicks * Math.pow(2, autoclickupgrades) * timePassed / 100;
     setInterval(update, 10);
 }
 
