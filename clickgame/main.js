@@ -10,14 +10,11 @@ var progress = 0;
 function load()
 {
     clicks = parseInt(getCookie("clicks"));
-    var timePassed = Date.now() - parseInt(getCookie("lastonline"));
-    console.log(Date.now());
-    console.log(parseInt(getCookie("lastonline")));
-    console.log(timePassed);
+    var timePassed = Date.now() - parseInt(getCookie("lastonline"));1
     upgrades = parseInt(getCookie("upgrades"));
     autoclicks = parseInt(getCookie("autoclicks"));
     autoclickupgrades = parseInt(getCookie("autoclickupgrades"));    
-    nextclicks = clicks + autoclicks * Math.pow(2, autoclickupgrades) * timePassed / 100;
+    nextclicks = clicks + autoclicks * Math.pow(2, autoclickupgrades) * timePassed / 1000;
     setInterval(update, 10);
 }
 
