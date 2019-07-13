@@ -10,11 +10,11 @@ var progress = 0;
 function load()
 {
     clicks = parseInt(getCookie("clicks"));
-    nextclicks = clicks;
-    prevclicks = clicks;
+    var timePassed = Date.now - parseInt(getCookie("lastonline"));
     upgrades = parseInt(getCookie("upgrades"));
     autoclicks = parseInt(getCookie("autoclicks"));
-    autoclickupgrades = parseInt(getCookie("autoclickupgrades"));
+    autoclickupgrades = parseInt(getCookie("autoclickupgrades"));    
+    nextclicks = clicks + autoclicks * Math.pow(2, autoclickupgrades) * timePassed / 1000;
     setInterval(update, 10);
 }
 
@@ -30,6 +30,7 @@ function update()
     setCookie("upgrades", upgrades, 300);
     setCookie("autoclicks", autoclicks, 300);    
     setCookie("autoclickupgrades", autoclickupgrades, 300);    
+    setCookie("lastonline", Date.now(), 300);    
 
     progress += .01;
     if (progress >= 1)
