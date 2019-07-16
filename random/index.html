@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <h1>Zufall</h1>
+    <p>Generiere eine zufällige Zahl zwischen zwei Zahlen.</p>
+    <div>
+        <label for="inmin">Min:</label>
+        <input type="number" id="inmin" name="inmin"/>
+    </div>
+    <div>
+        <label for="inmax">Max: </label>
+        <input type="number" id="inmax" name="inmax"/>
+    </div>
+    <button onclick="gen()">asd</button>
+    <p id="output"></p>
+    <script>        
+        function gen(){
+            var nums=rand(1,100);
+            var list=[];
+            var min=parseInt(document.getElementById("inmin").value);
+            var max=parseInt(document.getElementById("inmax").value)+1;
+            for(var i=0;i<nums;i++){
+                list.push(rand(min,max));
+            }
+            document.getElementById("output").innerText=list[rand(0,nums)];
+        }
+        function rand(min,max){
+            return Math.floor(Math.random()*(max-min)+min);
+        }
+    </script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>
