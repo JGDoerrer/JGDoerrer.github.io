@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
-    <h1>Zufall</h1>
-    <p>Generiere eine zufällige Zahl zwischen zwei Zahlen.</p>
-    <div>
-        <label for="inmin">Min:</label>
-        <input type="number" id="inmin" name="inmin"/>
-    </div>
-    <div>
-        <label for="inmax">Max: </label>
-        <input type="number" id="inmax" name="inmax"/>
-    </div>
-    <button onclick="gen()">asd</button>
-    <p id="output"></p>
-    <script>        
+<html>    
+    <title>
+        Josua's Website
+    </title>
+    <body>
+        <h1>Zufall</h1>
+        <p>Generiere eine zufällige Zahl zwischen zwei Zahlen.</p>
+        <div>
+            <label for="inmin">Min:</label>
+            <input type="number" id="inmin" name="inmin"/>
+        </div>
+        <div>
+            <label for="inmax">Max: </label>
+            <input type="number" id="inmax" name="inmax"/>
+        </div>
+        <button onclick="gen()">asd</button>
+        <p id="output"></p>
+        <script>        
         function gen(){
             var nums=rand(1,100);
             var list=[];
@@ -26,5 +30,6 @@
         function rand(min,max){
             return Math.floor(Math.random()*(max-min)+min);
         }
-    </script>   
+        </script>   
+    </body>
 </html>
