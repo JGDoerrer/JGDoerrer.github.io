@@ -1,63 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        body {
-            margin: 0;
-        }
-        h1 {
-            text-align: center;
-            text-shadow: 4px 4px lightgray;
-        }
-        a.link {
-            padding: 5px 10px 5px 10px;
-            color: black;
-            text-decoration: none;
-        }
-        a.link:link { /* unvisited */
-            border-left: 6px solid blue;
-            background-color: rgb(150, 150, 255);
-        }
-        a.link:visited { /* visited */
-            border-left: 6px solid rgb(150, 0, 255);
-            background-color: rgb(200, 125, 255);
-        }
-        a.link:hover { /* visited */
-            border-left: 6px solid rgb(255, 0, 0);
-            background-color: rgb(255, 150, 150);
-        }
-        a.link:active { /* visited */
-            border-left: 6px solid rgb(255, 100, 0);
-            background-color: rgb(255, 200, 150);
-        }
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: rgb(187, 187, 187);
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            top: 0;
-        }
-        li {
-            float: left;
-        }
-        li a {
-           display: block;
-           color: black;
-           padding: 8px 10px;
-           text-align: center;
-           text-decoration: none;
-        }
-        li a:hover {
-            background-color: #555;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>
         Josua's Website
     </title>
-    <body>
+    <body onload="a()">
         <div class="header">            
             <h1>Josua's Website</h1>
         </div>
@@ -70,6 +17,10 @@
         </ul>
 
         <div style="text-align: center">
+            <h2>Viele Zahlen</h2>
+            <script>function a(){for(var n="",t=2;t<1e3;t++)n+=b(b(t)+t).toString()+"\n";document.getElementById("p1").innerText=n}function b(n){for(var t=0;1!=n;)n%2==0?n/=2:n=3*n+1,t++;return t}</script>
+            <p id="p1"></p>
+
             <h2 id="downloads">Downloads:</h2>
             <a class="link" href="download/Spiel.zip">Unbenannt</a>
             <a class="link" href="download/Organisator.zip">Organisator</a>

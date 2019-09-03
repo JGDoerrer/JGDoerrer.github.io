@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html>    
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <title>
         Josua's Website
     </title>
     <body>
         <h1>Zufall</h1>
-        <p>Generiere eine zufällige Zahl zwischen zwei Zahlen.</p>
-        <div>
+        <p style="text-align: center">Generiere eine zufällige Zahl zwischen zwei Zahlen.</p>
+        <div style="text-align: center">
             <label for="inmin">Min:</label>
             <input type="number" id="inmin" name="inmin"/>
         </div>
-        <div>
+        <div style="text-align: center">
             <label for="inmax">Max: </label>
             <input type="number" id="inmax" name="inmax"/>
         </div>
-        <button onclick="gen()">Zufall!!</button>
-        <p id="output"></p>
-        <script>        
-        function gen(){
-            var nums=rand(1,100);
-            var list=[];
-            var min=parseInt(document.getElementById("inmin").value);
-            var max=parseInt(document.getElementById("inmax").value)+1;
-            for(var i=0;i<nums;i++){
-                list.push(rand(min,max));
-            }
-            document.getElementById("output").innerText=list[rand(0,nums)];
-        }
-        function rand(min,max){
-            return Math.floor(Math.random()*(max-min)+min);
-        }
+        <div style="text-align: center">
+            <label for="incount">Anzahl: </label>
+            <input type="number" id="incount" name="incount"/>
+        </div>
+        <div style="text-align: center;margin-top: 20px;">
+            <button onclick="gen()">Zufall!!</button>
+        </div>
+        <p style="text-align: center" id="output"></p>
+        <script>
+        function gen(){for(var n="",e=parseInt(document.getElementById("incount").value),t=0;t<e;t++){for(var r=[],o=a(rand(2,1e3))*rand(20,1e3),u=parseInt(document.getElementById("inmin").value),d=parseInt(document.getElementById("inmax").value)+1,m=0;m<o;m++)r.push(rand(u,d));n+=r[rand(0,o)].toString()+"\n"}document.getElementById("output").innerText=n}function rand(n,e){return Math.floor(Math.random()*(e-n)+n)}function a(n){for(var e=0;n>2;)n%2==0?n/=2:n=3*n+1,e++;return e}
         </script>   
     </body>
 </html>
