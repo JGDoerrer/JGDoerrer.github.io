@@ -24,7 +24,7 @@
         </div>
         <p style="text-align: center" id="output"></p>
         <script>
-        function gen(){for(var n="",e=parseInt(document.getElementById("incount").value),t=0;t<e;t++){for(var r=[],o=a(rand(2,1e3))*rand(20,1e3),u=parseInt(document.getElementById("inmin").value),d=parseInt(document.getElementById("inmax").value)+1,m=0;m<o;m++)r.push(rand(u,d));n+=r[rand(0,o)].toString()+"\n"}document.getElementById("output").innerText=n}function rand(n,e){return Math.floor(Math.random()*(e-n)+n)}function a(n){for(var e=0;n>2;)n%2==0?n/=2:n=3*n+1,e++;return e}
+        function gen(){for(var n="",e=parseInt(document.getElementById("incount").value),t=0;t<e;t++){for(var r=[],o=a(rand(2,1e3))*rand(20,1e3),u=parseInt(document.getElementById("inmin").value),d=parseInt(document.getElementById("inmax").value)+1,m=0;m<o;m++)r.push(rand(u,d));n+=r[rand(0,o-1)].toString()+"\n"}document.getElementById("output").innerText=n}function rand(n,e){return Math.floor(Math.random()*(e-n)+n)}function a(n){for(var e=0;n>2;)n%2==0?n/=2:n=3*n+1,e++;return e}
         </script>   
     </body>
 </html>
