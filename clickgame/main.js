@@ -91,7 +91,7 @@ function upgradecost()
 
 function autoclickcost()
 {
-    return Math.floor(60 * Math.pow(1.1, autoclicks));
+    return Math.floor(60 * Math.pow(1.2, autoclicks));
 }
 
 function autoclickupgradecost()
